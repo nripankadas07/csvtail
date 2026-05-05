@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csvtail"
+version = "0.1.0"
+description = "Streaming last-N rows of a CSV/TSV in constant memory; hand-rolled state-machine parser."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "nripankadas07" }]
+keywords = ["csv", "tail", "streaming"]
+classifiers = ["Development Status :: 4 - Beta", "License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/nripankadas07/csvtail"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+csvtail = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
